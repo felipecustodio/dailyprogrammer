@@ -1,20 +1,9 @@
-# Challenge #85 [intermediate] (3D cuboid projection)
+# Challenge #85 intermediate (3D cuboid projection)
 
-Write a program that outputs simple 3D ASCII art for a 
+Link to challenge: http://bit.ly/2bOQvzc
+
+Write a program that outputs simple 3D ASCII art for a
 cuboid in an oblique perspective, given a length, height,
-and depth, like this:
+and depth.
 
-$ python 3d.py 20 10 3
-   :::::::::::::::::::/
-  :::::::::::::::::::/+
- :::::::::::::::::::/++
-####################+++
-####################+++
-####################+++
-####################+++
-####################+++
-####################+++
-####################+++
-####################++
-####################+
-####################
+Output example: https://i.imgur.com/9NBSZgb.png
