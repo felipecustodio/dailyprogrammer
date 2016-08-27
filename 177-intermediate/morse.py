@@ -1,35 +1,43 @@
-# Probably very NOT pythonic
-# print was giving me a headache
-# turns out printing without newline and python versions
-# can be pretty rough...
-from __future__ import print_function
-def cuboid(l, h, d):
-    # Print top
-    for i in range(0, d):
-        for j in range(0, d-i):
-            print(" ", end="")
-        for j in range(0, l):
-            print(":", end="")
-        print("/", end="")
-        for j in range(0, i):
-            print("+", end="")
-        print()
-    # Print front
-    for i in range(h - d):
-        for j in range(0, l):
-            print("#", end="")
-        for j in range(0, d):
-            print("+", end="")
-        print()
-    # Print bottom
-    for i in range(0, d):
-        for j in range(0, l):
-            print("#", end="")
-        for j in range(0, (d-1-i)):
-            print("+", end="")
-        print()
+# Morse Dictionary
+morse = [
+        ".-", # A  
+        "-...", # B
+        "-.-.", # C
+        "-.." , # D
+        ".", # E
+        "..-.", # F
+        "--.", # G
+        "....", # H
+        "..", # I
+        ".---", # J
+        "-.-", # K
+        ".-..", # L
+        "--", # M
+        "-.", # N
+        "---", # O
+        ".--.", # P
+        "--.-", # Q
+        ".-.", # R
+        "...", # S
+        "-", # T
+        "..--", # U
+        "...-", # V
+        ".--", # W 
+        "-..-", # X
+        "-.--", # Y
+        "--.." # Z
+]
 
-l = (input("Length: "))
-h = (input("Height: "))
-d = (input("Depth: "))
-cuboid(l, h, d)
+# Ascii Table
+ascii = [ 97,98,99,100,101,102,103,104,105,106,107,108,109,110,
+111,112,113,114,115,116,117,118,119,120,121,122
+]
+
+message = raw_input("Message to translate: ")
+message.lower()
+translated = ""
+for i in range(0, len(message)):
+    for j in range(0, 26):
+        if (ord(message[i]) == (ascii[j])):
+            translated += (morse[j])
+print(translated)
