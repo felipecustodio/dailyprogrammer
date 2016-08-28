@@ -26,15 +26,20 @@ correct = 0
 tries = 5
 
 # Game loop
+print "WELCOME TO HANGMAN"
 while tries > 0 and (correct != len(answer) - 1):
     print "".join(hidden)
     print "You have %d tries" % tries
     guess = raw_input("Guess: ")
     if guess in answer:
-        correct += 1
+        if guess not in hidden:
+            correct += 1
+        else:
+            print "You already tried that"
         for i in range(0, len(answer) - 1):
             if answer[i] == guess:
                 hidden[i] = guess
+                
     else:
         tries -= 1
 
@@ -44,3 +49,4 @@ if (correct == len(answer) - 1):
     print "You won!"
 else:
     print "You lose!"
+    print "The answer was %s" %("".join(answer))
