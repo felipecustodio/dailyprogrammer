@@ -6,6 +6,8 @@ words = []
 for line in urllib2.urlopen("https://raw.githubusercontent.com/dolph/dictionary/master/enable1.txt"):
     words.append(line)
 
+
+# Could be replaced by just checking the size
 def fill(guess, answer):
     # Fill guess or answer to avoid out of range error
     if (guess < answer):
@@ -21,8 +23,8 @@ def terminal():
     possibilities = []
     for i in range(0, 5):
         possibilities.append(words[random.randint(0, len(words))])
-        print possibilities[i], 
-        
+        print possibilities[i],
+
     # Choose word to be guessed
     answer = possibilities[random.randint(0, 4)]
     print answer
@@ -38,12 +40,12 @@ def terminal():
         for i in range(0, len(guess)):
             if (guess[i] == answer[i]):
                 correct += 1
-        
+
         if (correct == len(answer) - (len(answer) - len(guess))):
             print("You guessed right!")
             return
         else:
             print("You guessed %d characters right!" % correct)
     print("Game over!")
-    
+
 terminal()

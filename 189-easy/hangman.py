@@ -39,7 +39,6 @@ while tries > 0 and (correct != len(answer) - 1):
         for i in range(0, len(answer) - 1):
             if answer[i] == guess:
                 hidden[i] = guess
-                
     else:
         tries -= 1
 
